@@ -5,20 +5,20 @@ def move(s):
 def end(s):
   return sum(s) > 117
 
-def win1(s):
-  return any(end(x) for x in move(s))
+def win1(n):
+  return any(end(x) for x in move(n)) and not end(n)
 
-def lose1_fail(s):
-  return any(win1(x) for x in move(s)) and not all(end(x) for x in move(s))
+def lose1_fail(n):
+  return any(win1(x) for x in move(n))
 
-def lose1(s):
-  return all(win1(x) for x in move(s)) and win1(s) == False
+def lose1(n):
+  return all(win1(x) for x in move(n))
 
-def win2(s):
-  return any(lose1(x) for x in move(s)) and win1(s) == False
+def win2(n):
+  return any(lose1(x) for x in move(n)) and not win1(n)
 
-def lose12(s):
-  return all(win1(x) or win2(x) for x in move(s)) and not all(win1(x) for x in move(s))
+def lose12(n):
+  return all(win1(x) or win2(x) for x in move(n)) and not all(win1(x) for x in move(n))
 
 print("19: ", [x for x in range(1, 115 + 1) if lose1([7, x])]) # lose1_fail, если в 19-ом неудачный ход
 print("20: ", [x for x in range(1, 115 + 1) if win2([7, x])])

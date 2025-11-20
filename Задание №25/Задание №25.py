@@ -87,8 +87,7 @@ def getDivs(n):
         if n % div == 0:
             divs.add(div)
             divs.add(n // div)
-    divs = sorted(list(divs))
-    return divs
+    return sorted(divs)
 
 for x in range(500_001, 501_000):
     divs = getDivs(x)
