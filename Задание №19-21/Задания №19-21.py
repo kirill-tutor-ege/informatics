@@ -42,7 +42,7 @@ def win2(n):
 # Позиция является проигрышной за 2 хода, если КАЖДЫЙ ход ИЗ НЕЕ ведет соперника ИЛИ в выигрышную позицию за 1 ход 
 # ИЛИ в выигрышную позицию за 2 хода НО каждый ход НЕ ВЕДЕТ гарантированно в выигрышную позицию за 1 ход
 def lose12(n):
-    return all(win1(x) or win2(x) for x in move(n)) and not all(win1(x) for x in move(n))
+    return all(win1(x) or win2(x) for x in move(n)) and not lose1(n)
 
 print("19: ", [x for x in range(1, 67) if lose1(x)])
 print("20: ", [x for x in range(1, 67) if win2(x)])
