@@ -53,3 +53,23 @@ for x in 0,1:
 # a == (b <= c) ✓
 #   1. b <= c (d)
 #   2. a == d
+
+# TODO Оформить нормально
+from itertools import *
+
+f = lambda x, y, z, w: (x or y) and not(y == z) and not(w) # на место x, y, z, w вставляем все переменные которые есть в задаче
+
+for x1, x2, x3, x4 in product([0, 1], repeat = 4): # кол-во х1, х2... равно кол-ву пропусков, также repeat = кол-во пропусков
+    table = [ # Переписываем таблицу из задания
+        (1, x1, 1, x2),
+        (0, 1, x3, 0),
+        (x4, 1, 1, 0)
+    ]
+
+    if len(table) == len(set(table)): # Проверяем, чтобы строки были неповторяющиеся
+        for vars in permutations("xyzw"):
+            if [f(**dict(zip(vars, row))) for row in table] == [1, 1, 1]: # Последний список [1, 1, 1] это значения столбца F
+                print(*vars)
+
+
+

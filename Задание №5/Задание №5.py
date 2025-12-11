@@ -30,7 +30,7 @@ R.count("1")
 
 # Посчитать сумму цифр в десятичном числе 
 # 1 
-sum(int(x) for x in str(число)) 
+sum(int(x) for x in str(число))
  
 # 2 
 sum = 0 

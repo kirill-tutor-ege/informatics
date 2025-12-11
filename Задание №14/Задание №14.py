@@ -75,3 +75,17 @@ print(summa)
 n = 3 * (289**2024) + 81 * (49**121) - 9 * (16**81) - 6011
 n = decToAny(n, 31)
 print(sum([x for x in n if x <= 17]))
+
+
+# # from string import *
+
+# # alphabet = dict(zip(range(36), digits + ascii_uppercase))
+# # def decToAny(n, base):
+# #     if n < base:
+# #         return alphabet[n]
+# #     else:
+# #         return decToAny(n // base, base) + alphabet[n % base]
+# from string import *
+# a = digits + ascii_uppercase
+# f = lambda n, b: (f(n // b, b) + a[n % b] if n >= b else str(n)) or "0"
+

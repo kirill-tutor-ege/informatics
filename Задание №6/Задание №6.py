@@ -37,3 +37,43 @@ for x in range(-30,30):
         dot(3) # Ставим точку радиуса 3
 
 done() # Конец программы
+
+
+
+
+# TODO
+from turtle import *
+
+tracer(0)
+corners1, corners2 = set(), set()
+
+for _ in range(5):
+    forward(37)
+    corners1.add((round(xcor()), round(ycor())))
+    right(90)
+    forward(44)
+    corners1.add((round(xcor()), round(ycor())))
+    right(90)
+up()
+back(18)
+right(90)
+forward(29)
+left(90)
+down()
+for _ in range(5):
+    forward(31)
+    corners2.add((round(xcor()), round(ycor())))
+    right(90)
+    forward(35)
+    corners2.add((round(xcor()), round(ycor())))
+    right(90)
+
+def rectangle(corners):
+    x_min, y_min = map(min, zip(*corners))
+    x_max, y_max = map(max, zip(*corners))
+    return set((x, y) for x in range(x_min, x_max + 1) for y in range(y_min, y_max + 1))
+
+rectangle1 = rectangle(corners1)
+rectangle2 = rectangle(corners2)
+
+print(len(rectangle1 & rectangle2))
