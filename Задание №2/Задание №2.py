@@ -71,5 +71,3 @@ for x1, x2, x3, x4 in product([0, 1], repeat = 4): # кол-во х1, х2... р�
             if [f(**dict(zip(vars, row))) for row in table] == [1, 1, 1]: # Последний список [1, 1, 1] это значения столбца F
                 print(*vars)
 
-
-

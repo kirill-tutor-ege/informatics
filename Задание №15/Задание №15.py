@@ -1,6 +1,7 @@
 # ДЕЛ(a, b) → (a % b == 0)
 # ¬ДЕЛ(a, b) → (a % b != 0)
 # x & y = z → (x & y == z)
+# ¬(x & y = z) → (x & y != z)
 # x ∈ A → (start<=x<=end)
 # A = [start, end]
 
