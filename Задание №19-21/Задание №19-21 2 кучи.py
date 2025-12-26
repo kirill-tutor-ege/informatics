@@ -9,7 +9,7 @@ def win1(n):
   return any(end(x) for x in move(n)) and not end(n)
 
 def lose1_fail(n):
-  return any(win1(x) for x in move(n))
+  return any(win1(x) for x in move(n)) and not lose1(n)
 
 def lose1(n):
   return all(win1(x) for x in move(n))
