@@ -1,5 +1,5 @@
 def move(s):
-  a, b = s
+  a, b = s # a, b = [3, 8] -> a = 3; b = 8
   return [a + 1, b], [a, b + 1], [a * 2, b], [a, b * 2]
 
 def end(s):
